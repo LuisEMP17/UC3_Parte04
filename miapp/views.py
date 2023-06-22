@@ -21,7 +21,18 @@ layout = """
     <hr/>
 """
 def index(request):
+    cursos = [ 'Ingenieria de Requerimientos',
+                    'Dibujo Técnico',
+                    'Gestión de Proceso de Negocio',
+                    'Algoritmos de Computación Gráfica',
+                    'Dinámica de Sistemas',
+                    'Microprocesadores',
+                    'Legislación informática',]
+
     return render(request,'index.html', {
+        'titulo':'Inicio',
+        'mensaje':'Proyecto Web Con DJango',
+        'cursos': cursos
 })
 
 def examen(request):
