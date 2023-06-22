@@ -38,8 +38,26 @@ def index(request):
 def examen(request):
     return render(request,'examen.html',{
 })
+
 def rango(request):
-    return render(request, 'rango.html', 
-    {}
-)
+    def es_primo(numero):
+        if numero < 2:
+            return False
+        for i in range(2, int(numero**0.5) + 1):
+            if numero % i == 0:
+                return False
+        return True
+
+    a = 12
+    b = 23
+    primos = [numero for numero in range(a, b + 1) if es_primo(numero)]
+
+    context = {
+        'titulo': 'Rango',
+        'a': a,
+        'b': b,
+        'primos': primos
+    }
+
+    return render(request, 'rango.html', context)
 
