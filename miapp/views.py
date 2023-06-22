@@ -61,3 +61,11 @@ def rango(request):
 
     return render(request, 'rango.html', context)
 
+def examen(request):
+    estudiantes = [ 'Bryam Guillen Ayala',
+    'Luis Enrrique Montes Palacios',
+    'Marcia Kori Timaná Espinoza']
+    return render(request,'examen.html', {
+    'titulo':'Examen',
+    'estudiantes': estudiantes
+})

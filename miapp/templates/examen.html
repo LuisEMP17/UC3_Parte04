@@ -1,8 +1,24 @@
 {% extends 'layout.html' %}
-{% block title %}
-    {{titulo}}
-{% endblock %}
 
 {% block content %}
+<!--Comentario en HTML-->
+{% comment 'Datos de la pagina index'%}
+En esta pagina se mostrara la bienvenida al sistema
+{% endcomment %}
+    <h1 class="title">{{titulo}}</h1>
+    <p>
+        <strong>Estudiantes Registrados: </strong>
+    </p>
+    <ul>
+        {% for estudiante in estudiantes %}
+        <li>{{estudiante}}</li>
+        {% endfor %}
+        <br>
+        <strong>Enlaces del GitHub: </strong>
+        <li><a href="https://github.com/LuisEMP17/UC3-Parte01.git">GitHub: Bryam Guillen Ayala</a></li>
+        <li><a href="https://github.com/Bryam332/UC3_Parte02_Guillen.git ">GitHub: Luis Enrrique Montes Palacios</a></li>
+        <li><a href="https://github.com/koritimana/UC3_Parte03.git ">GitHub: Marcia Kori Timana Espinoza</a></li>
+    </ul>
 
+    <p>Año: 2023</p>
 {% endblock %}
